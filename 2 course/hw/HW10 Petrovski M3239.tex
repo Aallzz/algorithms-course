@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath} 
+\usepackage{graphicx}
+
+\title{Домашняя работа 1}
+\author{Александр Петровский, M3239}
+\date{April 2018}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+	Задача 1
+\end{center}
+
+По определению последовательности чисел Фиббоначи строится следующим образом:
+$\\F_{0} = 0\\
+F_{1} = 1\\
+F_{i} = F_{i - 1} + F_{i - 2}\\$
+Докажем по индукции:
+База: $\\
+gcd(F_{0}, F{1}) = gcd(0, 1) = 1 \\
+gcd(F_{1}, F{2}) = gcd(1, 1) = 1 \\
+gcd(F_{2}, F{3}) = gcd(1, 2) = 1 \\
+gcd(F_{3}, F{4}) = gcd(2, 3) = 1 \\
+$
+Шаг индукци: Пусть верно $gcd(F_{i}, F_{i - 1}) = 1$, тогда $\\gcd(F_{i + 1}, F_{i}) = gcd(F_{i} + F_{i - 1}, F_{i}) = gcd(F_{i - 1}, F_{i}) = gcd(F_{i}, F_{i - 1}) = 1$, что и требовалось показать.
+
+\begin{center}
+	Задача 2
+\end{center}.
+
+\begin{enumerate} 
+\item Так как $x$ - делитель чисел $a$ и $b$, то $a=kx$ и $b=lx$, тогда рассмотрим их разность. $a - b = kx - lx = x (k - l)$, очевидно, что она делится на $x$, а $b$ делится на $x$ по условию.
+\item $x$ - делитель $(a - b)$ и $b$, значит $(a - b) = kx$ и $ b = lx$. Тогда $a = (a - b) + b = kx + lx = x (r + l)$, что, очевидно, делится на $x$. $b$ делится на $x$ по условию
+\end{enumerate} 
+
+
+\begin{center}
+	Задача 3
+\end{center}.
+Пусть $p$ и $q$ взаимно простые числа и $n = pq$ , тогда $\sigma_{k}(n) = \sigma_{k}(pq) = \sum_{d|pq}{d^k}$. Рассмторим разложение всех $d$ из этой суммы. Так как $p$ и $q$ взаимно простые числа, то разложение $d$ состоит только из чисел, которые являются делителями $p$ либо $q$. То есть $d = d_1 d_2$, $gcd(d_1, q) = 1$ и $gcd(d_2, p) = 1$, $gcd(d_1, q) = d_1$ и $gcd(d_2, p) = d_2$. А значит Тогда $\sigma_{k}(p) * \sigma_{k}(q) = \sum_{d_1|p}{d_1^k} * \sum_{d_2|q}{d_2^k} = \sum_{d_1|p, d_2|q}{d_1d_2^k} = \sum_{d|pq}{d^k}$= \sigma_{k}(n) $  
+
+\begin{center}
+	Задача 4
+\end{center}.
+
+Дано: $n = pq$; $\phi(n)$
+
+Найти: $p, q$
+$\\\phi(n) = \phi(pq) = \phi(p)\phi(q) = (p - 1)(q - 1)\\p=n/q\\\phi(n)=(n / q - 1)(q - 1) = n - q - n / q + 1\\\phi(n)q = nq - q^2 - n + q\\q^2 + q(\phi(n) - n - 1)+ n = 0\\p, q = ((n + 1 - \phi(n))  \pm \sqrt{(n + 1 - \phi(n))^2 - 4n})/2 $
+
+\end{document}
+
+
+
